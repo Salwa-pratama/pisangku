@@ -3,7 +3,7 @@ import { memo } from "react";
 const Home = () => {
   return (
     <div>
-      <h2>Home</h2>
+      <h2 className="bg-sky-600">Home</h2>
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import FlowbiteProvider from "@/components/provider/FlowbiteProvider";
 import "./globals.css";
+// Components
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], // opsional
@@ -23,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable}  antialiased bg-white`}>
+        {/* Provider */}
+        <FlowbiteProvider />
         <Header />
-        <main className="w-full h-screen max-w-340.5 px-3.75 mx-auto border border-black">
+        <main className="w-full px-[125px] h-screen max-w-340.5 px-3.75 mx-auto mt-10">
           {/* Main Content */}
           {children}
         </main>
