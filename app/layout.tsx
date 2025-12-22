@@ -5,6 +5,9 @@ import "./globals.css";
 // Components
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import RectangleTransition from "@/components/transition/RectangleTransition";
+import PageTransition from "@/components/transition/PageTransition";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], // opsional
@@ -26,12 +29,15 @@ export default function RootLayout({
       <body className={`${poppins.variable}  antialiased bg-white`}>
         {/* Provider */}
         <FlowbiteProvider />
-        <Header />
-        <main className="w-full px-[125px] h-screen max-w-340.5 px-3.75 mx-auto mt-10">
-          {/* Main Content */}
-          {children}
-        </main>
-        <Footer />
+        <RectangleTransition />
+        <PageTransition>
+          <Header />
+          <main className="w-full  px-8 lg:px-[125px] h-screen max-w-340.5  mx-auto mt-10">
+            {/* Main Content */}
+            {children}
+          </main>
+          <Footer />
+        </PageTransition>
       </body>
     </html>
   );
