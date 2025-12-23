@@ -1,42 +1,51 @@
 "use client";
 import { memo } from "react";
-
-import { motion } from "framer-motion";
+import { delay, motion, Variants } from "framer-motion";
+// Components
 import ProductCard from "@/components/card/ProductCard";
-import avatarImg from "@/public/assets/pisangGoreng.png";
-import avatarImg2 from "@/public/assets/pisangNugget.png";
-import avatarImg3 from "@/public/assets/pisangRoll.png";
+import VarianSection from "@/components/sections/VarianSection";
+import Section2Home from "@/components/sections/Section2Home";
 
-export const products = [
-  {
-    image: avatarImg,
-    title: "Pisang Goreng Cokelat",
-    description:
-      "Pisang yang digulung menggunakan kulit lumpia, digoreng lalu dibaluri cokelat",
-    price: "6K",
+const container: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      delay: 1.8,
+      ease: "easeIn",
+      when: "beforeChildren", // ⬅️ PENTING
+      delayChildren: 0.4, // ⬅️ card mulai SETELAH fade selesai
+      staggerChildren: 0.25, // ⬅️ muncul satu-satu
+    },
   },
-  {
-    image: avatarImg2,
-    title: "Pisang Nugget",
-    description: "Pisang nugget crispy dengan berbagai pilihan topping",
-    price: "8K",
-  },
-  {
-    image: avatarImg3,
-    title: "Pisang Roll",
-    description: "Pisang roll renyah dengan isian cokelat lumer",
-    price: "7K",
-  },
-];
+};
 
 const Catalogue = () => {
   return (
-    <div>
-      <h1 className="font-bold text-4xl text-center mb-10">
-        <span className="text-yellow-500"> product</span> kami
-      </h1>
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <div className="mb-20 flex flex-col items-center">
+        <h1 className="font-bold text-4xl text-center">
+          <span className="text-yellow-500"> product</span> kami
+        </h1>
+        <p className="justify-center text-center max-w-[550px]">
+          Beberapa Aneka Camilan Pisang yang kami sediangkan untuk menemani
+          liburmu, ngumbul bareng dengan teman maupun keluarga mu jadi lebih
+          asik
+        </p>
+      </div>
       <ProductCard />
-    </div>
+
+      {/* Section 2 */}
+      <VarianSection />
+      {/* Section 3 */}
+      <Section2Home />
+    </motion.div>
   );
 };
 

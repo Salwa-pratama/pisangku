@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import avatarImg from "@/public/assets/logo.png";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/page/home" },
+  { label: "Home", href: "/" },
   { label: "Catalogue", href: "/page/catalogue" },
   { label: "About", href: "/page/about" },
   { label: "Contact", href: "/page/contact" },

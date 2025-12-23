@@ -43,7 +43,17 @@ const products = [
 
 const ProductCard = () => {
   return (
-    <div className="flex flex-col gap-10">
+    <motion.div
+      className="flex flex-col gap-10"
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.25,
+          },
+        },
+      }}
+    >
       {products.map((item, index) => {
         const isReverse = index % 2 === 1;
 
@@ -51,14 +61,14 @@ const ProductCard = () => {
           <motion.div
             key={index}
             variants={isReverse ? slideFromRight : slideFromLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay: 1 + index * 0.2,
-            }}
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }}
+            // transition={{
+            //   duration: 0.6,
+            //   ease: "easeOut",
+            //   delay: 1 + index * 8,
+            // }}
             className={`flex items-stretch shadow-md max-h-96 max-w-[720px] border ${
               isReverse ? "ml-auto" : ""
             }`}
@@ -125,7 +135,7 @@ const ProductCard = () => {
           </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 
