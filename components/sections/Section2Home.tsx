@@ -9,7 +9,8 @@ const Section2Home = () => {
         </h2>
         <div className="flex flex-row gap-10 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400 items-center justify-center">
           <a href="#" className="flex justify-center items-center">
-            <SiGrab className="text-green-600 text-5xl" />
+            <SiGrab className="text-green-600 text-5xl" />{" "}
+            <span className="text-green-600 font-bold">Food</span>
           </a>
           <a href="#" className="flex justify-center items-center">
             <SiShopee className="text-orange-500 text-5xl" />

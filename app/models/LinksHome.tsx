@@ -4,7 +4,7 @@ export const INFO_CARDS = [
     label: "Kranggan, Gurah - Kediri",
     icon: (
       <svg
-        className="w-6 h-6 text-yellow-900"
+        className="w-6 h-6 text-yellow-500"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -22,7 +22,7 @@ export const INFO_CARDS = [
     label: "07:00 - 22:00",
     icon: (
       <svg
-        className="w-6 h-6 text-yellow-900"
+        className="w-6 h-6 text-yellow-500"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ export const INFO_CARDS = [
     label: "+62 895-3223-18221",
     icon: (
       <svg
-        className="w-6 h-6 text-yellow-900"
+        className="w-6 h-6 text-yellow-500"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

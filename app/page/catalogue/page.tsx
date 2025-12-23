@@ -2,6 +2,7 @@
 import { memo } from "react";
 
 import { motion } from "framer-motion";
+import ProductCard from "@/components/card/ProductCard";
 
 const Catalogue = () => {
   return (
@@ -12,7 +13,7 @@ const Catalogue = () => {
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
     >
-      <h2 className="">Home</h2>
+      <ProductCard />
     </motion.div>
   );
 };
