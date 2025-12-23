@@ -7,11 +7,19 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import RectangleTransition from "@/components/transition/RectangleTransition";
 import PageTransition from "@/components/transition/PageTransition";
+import { Ubuntu } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], // opsional
   variable: "--font-poppins",
+});
+
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-ubuntu",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,13 +34,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}  antialiased bg-white`}>
+      <body className={`${ubuntu.variable}  antialiased bg-white`}>
         {/* Provider */}
         <FlowbiteProvider />
         <RectangleTransition />
         <PageTransition>
           <Header />
-          <main className="w-full  px-8 lg:px-[125px] h-screen max-w-340.5  mx-auto mt-10">
+          <main className="w-full  px-8 lg:px-[125px] h-[400vh] max-w-340.5  mx-auto mt-10">
             {/* Main Content */}
             {children}
           </main>

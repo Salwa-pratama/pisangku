@@ -32,7 +32,7 @@ const Home = () => {
             href="#"
             className="inline-flex bg-yellow-500 items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg  hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
           >
-            Get started
+            Lihat menu
             <svg
               className="w-5 h-5 ml-2 -mr-1"
               fill="currentColor"
@@ -50,7 +50,7 @@ const Home = () => {
             href="#"
             className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-black  dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
-            Speak to Sales
+            Order here
           </a>
 
           <div className="flex flex-col lg:flex-row  gap-10    mt-10">
