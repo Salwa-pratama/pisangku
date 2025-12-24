@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Catalogue", href: "/page/catalogue" },
   { label: "About", href: "/page/about" },
-  { label: "Contact", href: "/page/contact" },
+  { label: "Order", href: "/page/contact" },
 ];
 
 const Header = () => {

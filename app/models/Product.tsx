@@ -35,6 +35,21 @@ const products = [
   },
 ];
 
+const mixRasa = [
+  {
+    total: 2,
+    harga: 1000,
+  },
+  {
+    total: 3,
+    harga: 1000,
+  },
+  {
+    total: 4,
+    harga: 1000,
+  },
+];
+
 const VariantRasa = [
   {
     name: "Cokelat Glaze",
