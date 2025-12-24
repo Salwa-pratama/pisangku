@@ -125,7 +125,7 @@ export default function Contact() {
 
   const handleOrder = () => {
     const wa = "62895322318221";
-    let text = `*PESANAN BARU*\n\n`;
+    let text = `*Hai kak Aku mau pesen Pisang 😀*\n\n`;
     text += `Nama: ${customer.name}\n`;
     text += `Email: ${customer.email || "-"}\n`;
     text += `Lokasi: ${customer.location}\n\n`;
@@ -155,7 +155,10 @@ export default function Contact() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
       className="max-w-7xl mx-auto p-4"
     >
       <h1 className="text-3xl font-bold text-center mb-6">
@@ -240,7 +243,7 @@ export default function Contact() {
                   onChange={(e) =>
                     updateOrder(i, "pcs", Number(e.target.value))
                   }
-                  className="border p-1 rounded text-sm"
+                  className="border p-1 rounded text-sm border-yellow-500"
                 >
                   {product?.variants.map((v) => (
                     <option key={v.pcs} value={v.pcs}>
@@ -260,7 +263,7 @@ export default function Contact() {
               <select
                 name="rasa"
                 onChange={(e) => updateOrder(i, "rasaMode", e.target.value)}
-                className="w-fit  px-2 rounded-lg text-black border-yellow-500"
+                className="w-fit  p-1 rounded-lg text-black border-yellow-500"
               >
                 <option value="none">Tidak Pakai Rasa</option>
                 <option value="single">Satu Rasa</option>
@@ -270,7 +273,10 @@ export default function Contact() {
             {/* RASA */}
 
             {o.rasaMode === "single" && (
-              <select onChange={(e) => updateOrder(i, "rasa", e.target.value)}>
+              <select
+                onChange={(e) => updateOrder(i, "rasa", e.target.value)}
+                className="p-1 rounded-lg"
+              >
                 {rasaList.map((r) => (
                   <option key={r}>{r}</option>
                 ))}
@@ -283,6 +289,7 @@ export default function Contact() {
                   onChange={(e) =>
                     updateOrder(i, "mixCount", Number(e.target.value))
                   }
+                  className="p-1 rounded-lg text-sm"
                 >
                   <option value={0}>Pilih Jumlah Mix</option>
                   {[2, 3, 4].map((n) => (
@@ -299,6 +306,7 @@ export default function Contact() {
                       arr[idx] = e.target.value;
                       updateOrder(i, "mixRasa", arr);
                     }}
+                    className="p-1 rounded-lg w-fit text-sm"
                   >
                     {rasaList.map((r) => (
                       <option key={r}>{r}</option>
@@ -344,17 +352,22 @@ export default function Contact() {
       {orders.length > 0 && (
         <div className="mt-6 space-y-4">
           {/* TOTAL */}
-          <div className="flex justify-between items-center bg-gray-100 p-4 rounded font-bold text-lg">
+          <div className="flex justify-between items-center bg-yellow-950 text-white p-4 rounded font-bold text-lg">
             <span>Total Harga</span>
             <span>Rp{total.toLocaleString("id-ID")}</span>
           </div>
 
           {/* ACTION */}
+          <p>
+            {" "}
+            <span className="text-yellow-500">* </span>Lengkapi data anda untuk
+            lanjut order
+          </p>
           <div className="flex gap-3">
             <button
               disabled={!customer.name || !customer.location}
               onClick={handleOrder}
-              className="bg-blue-600 text-white px-6 py-3 rounded disabled:opacity-50"
+              className="bg-green-500 text-white px-6 py-3 rounded disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Order via WhatsApp
             </button>

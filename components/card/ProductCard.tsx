@@ -53,6 +53,8 @@ const ProductCard = () => {
           },
         },
       }}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
     >
       {products.map((item, index) => {
         const isReverse = index % 2 === 1;
@@ -61,15 +63,15 @@ const ProductCard = () => {
           <motion.div
             key={index}
             variants={isReverse ? slideFromRight : slideFromLeft}
-            // initial="hidden"
-            // whileInView="visible"
-            // viewport={{ amount: 0.3 }}
-            // transition={{
-            //   duration: 0.6,
-            //   ease: "easeOut",
-            //   delay: 1 + index * 8,
-            // }}
-            className={`flex items-stretch shadow-md max-h-96 max-w-[720px] border ${
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay: 1 + index * 8,
+            }}
+            className={`flex items-stretch shadow-md lg:max-h-96  h-fit  max-w-[720px] border ${
               isReverse ? "ml-auto" : ""
             }`}
           >
@@ -87,33 +89,40 @@ const ProductCard = () => {
             )}
 
             {/* DESCRIPTION */}
-            <div className="bg-yellow-950/75 flex flex-col p-4">
+            <div className="bg-yellow-950/75 flex flex-col px-4 lg:p-4 md:p-2 sm:p-2">
               <h1 className="text-2xl font-bold">
-                <span className="text-yellow-400">{item.titleMain}</span>{" "}
-                <span className="text-white">{item.titleSub}</span>
+                <span className="text-yellow-400 text-[10px] lg:text-2xl md:text-2xl sm:text-2xl">
+                  {item.titleMain}
+                </span>{" "}
+                <span className="text-white text-[10px] lg:text-2xl md:text-2xl sm:text-2xl">
+                  {item.titleSub}
+                </span>
               </h1>
 
-              <p className="text-white">
+              <p className="text-white text-[8px] lg:text-xl md:text-xl font-thin sm:text-lg">
                 Pisang yang digulung menggunakan kulit lumpia, digoreng lalu
                 dibaluri dengan cokelat
               </p>
 
               <div className="flex items-center mt-auto">
                 {isReverse && (
-                  <button className="mr-auto bg-yellow-200 text-yellow-700 px-2 rounded-md">
+                  <button className="mr-auto bg-yellow-200 text-yellow-700 px-2 rounded-md lg:text-sm md:text-sm text-[8px] sm:text-sm">
                     Mau kak
                   </button>
                 )}
 
                 <h2 className="text-xl font-bold">
-                  <span className="text-white"> Start From </span>{" "}
-                  <span className="underline text-yellow-500">
+                  <span className="text-white text-[8px] lg:text-xl sm:text-xl md:text-xl">
+                    {" "}
+                    Start From{" "}
+                  </span>{" "}
+                  <span className="underline text-yellow-500 text-sm lg:text-xl sm:text-xl md:text-xl">
                     {item.price}
                   </span>
                 </h2>
 
                 {!isReverse && (
-                  <button className="ml-auto bg-yellow-200 text-yellow-700 px-2 rounded-md">
+                  <button className="ml-auto bg-yellow-200 text-yellow-700 px-2 rounded-md lg:text-sm text-[8px] md:text-sm sm:text-sm">
                     Mau kak
                   </button>
                 )}

@@ -40,7 +40,7 @@ export default function RootLayout({
         <RectangleTransition />
         <PageTransition>
           <Header />
-          <main className="w-full  px-8 lg:px-[125px] h-fit max-w-340.5  mx-auto mt-10">
+          <main className="w-full  px-8 lg:px-[125px] min-h-[80vh]  h-fit  mx-auto mt-10">
             {/* Main Content */}
             {children}
           </main>

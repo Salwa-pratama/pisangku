@@ -27,7 +27,7 @@ const Header = () => {
               src={avatarImg}
               alt="Avatar"
               width={50}
-              height={50}
+              height={60}
               className="mr-3 h-6 sm:h-9"
             />
             <span className="text-xl font-semibold">Pisangku</span>

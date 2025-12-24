@@ -12,7 +12,7 @@ const container: Variants = {
     opacity: 1,
     transition: {
       duration: 0.4,
-      delay: 1.8,
+      delay: 0.4,
       ease: "easeIn",
       when: "beforeChildren", // ⬅️ PENTING
       delayChildren: 0.4, // ⬅️ card mulai SETELAH fade selesai
@@ -26,8 +26,8 @@ const Catalogue = () => {
     <motion.div
       variants={container}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      animate="visible"
+
     >
       <div className="mb-20 flex flex-col items-center">
         <h1 className="font-bold text-4xl text-center">
