@@ -354,7 +354,7 @@ export default function Contact() {
               <p>Rp{o.price}</p>
               <button
                 onClick={() => removeOrder(i)}
-                className="text-red-200 font-bold text-sm hover:text-red-500 transition ml-auto "
+                className="text-red-500 font-bold text-sm hover:text-red-500 transition ml-auto "
                 aria-label="Hapus pesanan"
               >
                 Cancel
