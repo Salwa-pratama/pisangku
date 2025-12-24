@@ -151,6 +151,11 @@ export default function Contact() {
       location: "",
     });
   };
+  const removeOrder = (index: number) => {
+    const updated = [...orders];
+    updated.splice(index, 1);
+    setOrders(updated);
+  };
 
   return (
     <motion.div
@@ -344,7 +349,17 @@ export default function Contact() {
               </div>
             )}
 
-            <div className="font-bold text-right">Rp{o.price}</div>
+            <div className="font-bold flex ">
+              {/* TOMBOL SILANG */}
+              <p>Rp{o.price}</p>
+              <button
+                onClick={() => removeOrder(i)}
+                className="text-red-200 font-bold text-sm hover:text-red-500 transition ml-auto "
+                aria-label="Hapus pesanan"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         );
       })}
