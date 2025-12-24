@@ -31,7 +31,7 @@ const Home = () => {
 
           <Link
             href="/page/catalogue"
-            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-yellow-500 px-6 font-medium text-white mr-4"
+            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-yellow-500 px-6 font-medium text-white mr-4 mb-4"
           >
             <span>Lihat Menu</span>
             <div className="ml-1 transition group-hover:translate-x-1">
