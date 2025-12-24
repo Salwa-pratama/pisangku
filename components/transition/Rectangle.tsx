@@ -45,7 +45,7 @@ const Rectangle = () => {
             height={120}
             priority
           />
-          <h1 className="mt-4 text-white text-3xl font-bold tracking-wide border-l pl-2 border-l-yellow-950">
+          <h1 className="mt-4 text-white text-3xl font-bold tracking-wide  ">
             Pisangku
           </h1>
         </div>
