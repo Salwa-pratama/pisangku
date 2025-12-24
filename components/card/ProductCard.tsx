@@ -24,18 +24,24 @@ const products = [
   {
     titleMain: "Pisang",
     titleSub: "Goreng Cokelat",
+    description:
+      "Pisang yang digulung menggunakan kulit lumpia, digoreng lalu dibaluri dengan cokelat",
     price: "6K",
     image: avatarImg,
   },
   {
     titleMain: "Pisang",
     titleSub: "Nugget",
+    description:
+      "Pisang yang digulung menggunakan kulit lumpia, dan dibaluri dengan tepung panir lalu digoreng",
     price: "6K",
     image: avatarImg2,
   },
   {
     titleMain: "Pisang",
     titleSub: "Roll's",
+    description:
+      "Pisang yang digulung menggunakan kulit lumpia, lalu digoreng dengan minyak panas",
     price: "5K",
     image: avatarImg3,
   },
@@ -100,8 +106,7 @@ const ProductCard = () => {
               </h1>
 
               <p className="text-white text-[8px] lg:text-xl md:text-xl font-thin sm:text-lg">
-                Pisang yang digulung menggunakan kulit lumpia, digoreng lalu
-                dibaluri dengan cokelat
+                {item.description}
               </p>
 
               <div className="flex items-center mt-auto">

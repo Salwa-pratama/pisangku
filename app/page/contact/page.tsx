@@ -382,7 +382,7 @@ export default function Contact() {
             <button
               disabled={!customer.name || !customer.location}
               onClick={handleOrder}
-              className="bg-green-500 text-white px-6 py-3 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-green-500 text-white px-6 py-3 rounded disabled:opacity-50 disabled:cursor-not-allowed "
             >
               Order via WhatsApp
             </button>

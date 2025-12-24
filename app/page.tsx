@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import avatarImg from "@/public/assets/pisangNugget.png";
 import { INFO_CARDS } from "@/app/models/LinksHome";
-import Section2Home from "@/components/sections/Section2Home";
 import Link from "next/link";
 const Home = () => {
   return (
@@ -88,8 +87,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Section 2 */}
-      {/* <Section2Home /> */}
+   
     </motion.div>
   );
 };

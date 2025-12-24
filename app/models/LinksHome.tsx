@@ -19,7 +19,7 @@ export const INFO_CARDS = [
   },
   {
     id: "time",
-    label: "07:00 - 22:00",
+    label: "09:00 - 20:00",
     icon: (
       <svg
         className="w-6 h-6 text-yellow-500"
