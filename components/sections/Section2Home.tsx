@@ -42,12 +42,18 @@ const Section2Home = () => {
             Tersedia juga di
           </p>
           <div className="flex flex-row gap-10 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400 items-center justify-center">
-            <a href="#" className="flex justify-center items-center">
+            <a
+              href="https://r.grab.com/g/6-20251113_133823_f3c76723578441bba228c4f8fe5d90c9_MEXMPS-6-C7TXKBT2WFWJVA"
+              className="flex justify-center items-center"
+            >
               <SiGrab className="text-green-600 text-5xl" />{" "}
               <span className="text-green-600 font-bold text-2xl">Food</span>
             </a>
             {/* Ganti Shopee icon dengan gambar */}
-            <a href="#" className="flex justify-center items-center gap-2">
+            <a
+              href="https://shopee.co.id/universal-link/now-food/shop/22503048?deep_and_deferred=1&shareChannel=copy_link"
+              className="flex justify-center items-center gap-2"
+            >
               <Image
                 src={shooPieFood}
                 alt="Shoopie"
