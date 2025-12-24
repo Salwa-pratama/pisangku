@@ -2,7 +2,7 @@
 import { memo } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 import avatarImg from "@/public/assets/pisangGoreng.png";
 import avatarImg2 from "@/public/assets/pisangNugget.png";
 import avatarImg3 from "@/public/assets/pisangRoll.png";
@@ -106,9 +106,12 @@ const ProductCard = () => {
 
               <div className="flex items-center mt-auto">
                 {isReverse && (
-                  <button className="mr-auto bg-yellow-200 text-yellow-700 px-2 rounded-md lg:text-sm md:text-sm text-[8px] sm:text-sm">
+                  <Link
+                    href="/page/contact"
+                    className="mr-auto bg-yellow-200 text-yellow-700 px-2 rounded-md lg:text-sm md:text-sm text-[8px] sm:text-sm"
+                  >
                     Mau kak
-                  </button>
+                  </Link>
                 )}
 
                 <h2 className="text-xl font-bold">
@@ -122,9 +125,12 @@ const ProductCard = () => {
                 </h2>
 
                 {!isReverse && (
-                  <button className="ml-auto bg-yellow-200 text-yellow-700 px-2 rounded-md lg:text-sm text-[8px] md:text-sm sm:text-sm">
+                  <Link
+                    href="/page/contact"
+                    className="ml-auto bg-yellow-200 text-yellow-700 px-2 rounded-md lg:text-sm text-[8px] md:text-sm sm:text-sm"
+                  >
                     Mau kak
-                  </button>
+                  </Link>
                 )}
               </div>
             </div>
