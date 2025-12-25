@@ -33,8 +33,8 @@ const products = [
     titleMain: "Pisang",
     titleSub: "Nugget",
     description:
-      "Pisang yang digulung menggunakan kulit lumpia, dan dibaluri dengan tepung panir lalu digoreng",
-    price: "6K",
+      "Pisang nugget yang diolah dengan tepung terigu dan panir, dipadukan bumbu rahasia lalu digoreng",
+    price: "5K",
     image: avatarImg2,
   },
   {
@@ -42,7 +42,7 @@ const products = [
     titleSub: "Roll's",
     description:
       "Pisang yang digulung menggunakan kulit lumpia, lalu digoreng dengan minyak panas",
-    price: "5K",
+    price: "6K",
     image: avatarImg3,
   },
 ];
