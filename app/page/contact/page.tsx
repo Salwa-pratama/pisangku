@@ -148,7 +148,7 @@ export default function Contact() {
       return;
     }
 
-    alert("Pindah ke halaman whatssapp");
+    alert("Pindah ke halaman waweb");
 
     let text = `*Hai kak Aku mau pesen Pisang 😀*\n\n`;
     text += `Nama: ${customer.name}\n`;
