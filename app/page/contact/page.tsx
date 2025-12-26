@@ -132,8 +132,8 @@ export default function Contact() {
     // Insert ke database
     const { error } = await supabase.from("order_clicks").insert([
       {
-        customer_name: customer.name,
-        customer_location: customer.location,
+        customer_name: "anonim",
+        customer_location: "no need to know",
         total_price: total,
         items: orders,
         user_agent: navigator.userAgent,
