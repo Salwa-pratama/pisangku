@@ -6,6 +6,9 @@ import pisangCokelat from "@/public/assets/pisangGoreng.png";
 import pisangNugget from "@/public/assets/pisangNugget.png";
 import pisangRoll from "@/public/assets/pisangRoll.png";
 import { div, label } from "framer-motion/client";
+import { supabase } from "@/lib/supabaseClient";
+import { stat } from "fs";
+import { error } from "console";
 
 const products = [
   {
@@ -123,8 +126,27 @@ export default function Contact() {
 
   const total = orders.reduce((a, b) => a + b.price, 0);
 
-  const handleOrder = () => {
+  const handleOrder = async () => {
     const wa = "62895322318221";
+    const orderCode = `ORD-${crypto.randomUUID().slice(0, 6).toUpperCase()}`;
+
+    const { error } = await supabase.from("order_clicks").insert([
+      {
+        id: orderCode,
+        customer_name: customer.name,
+        customer_location: customer.location,
+        total_price: total,
+        items: orders,
+        user_agent: navigator.userAgent,
+        status: "clicked",
+      },
+    ]);
+
+    // error handling
+    if (error) {
+      console.error("Tracking gagal: ", error.message);
+    }
+
     let text = `*Hai kak Aku mau pesen Pisang 😀*\n\n`;
     text += `Nama: ${customer.name}\n`;
     text += `Email: ${customer.email || "-"}\n`;
