@@ -129,7 +129,6 @@ export default function Contact() {
     text += `Nama: ${customer.name}\n`;
     text += `Email: ${customer.email || "-"}\n`;
     text += `Lokasi: ${customer.location}\n\n`;
-
     orders.forEach((o, i) => {
       text += `${i + 1}. ${o.product} (${o.pcs} pcs)\n`;
       if (o.rasaMode === "single") text += `   Rasa: ${o.rasa}\n`;
