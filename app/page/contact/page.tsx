@@ -132,7 +132,6 @@ export default function Contact() {
     // Insert ke database
     const { error } = await supabase.from("order_clicks").insert([
       {
-        id: orderCode,
         customer_name: customer.name,
         customer_location: customer.location,
         total_price: total,
@@ -145,8 +144,11 @@ export default function Contact() {
     // error handling
     if (error) {
       console.error("Tracking gagal: ", error.message);
+      alert("gagal melakukan order");
+      return;
     }
-    console.log("berhasil insert ke database");
+
+    alert("Pindah ke halaman whatssapp");
 
     let text = `*Hai kak Aku mau pesen Pisang 😀*\n\n`;
     text += `Nama: ${customer.name}\n`;
