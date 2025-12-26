@@ -2,13 +2,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { v4 as uuidv4 } from "uuid";
+// assets
 import pisangCokelat from "@/public/assets/pisangGoreng.png";
 import pisangNugget from "@/public/assets/pisangNugget.png";
 import pisangRoll from "@/public/assets/pisangRoll.png";
-import { div, label } from "framer-motion/client";
 import { supabase } from "@/lib/supabaseClient";
-import { stat } from "fs";
-import { error } from "console";
 
 const products = [
   {
@@ -128,8 +127,9 @@ export default function Contact() {
 
   const handleOrder = async () => {
     const wa = "62895322318221";
-    const orderCode = `ORD-${crypto.randomUUID().slice(0, 6).toUpperCase()}`;
+    const orderCode = `ORD-${uuidv4().slice(0, 6).toUpperCase()}`;
 
+    // Insert ke database
     const { error } = await supabase.from("order_clicks").insert([
       {
         id: orderCode,
@@ -146,6 +146,7 @@ export default function Contact() {
     if (error) {
       console.error("Tracking gagal: ", error.message);
     }
+    console.log("berhasil insert ke database");
 
     let text = `*Hai kak Aku mau pesen Pisang 😀*\n\n`;
     text += `Nama: ${customer.name}\n`;
